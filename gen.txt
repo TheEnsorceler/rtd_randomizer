@@ -1,0 +1,607 @@
+[Effects]
+Fire
+Water
+Air
+Earth
+Tundra
+Desert
+Jungle
+Plains
+Avian
+Lizard
+Mammal
+Insect
+Fish
+Past
+Future
+Technological
+Nature
+Science
+Mythology
+Chemical
+Short-Range
+Long-Range
+Fast
+Slow
+Large
+Small
+Area of Effect
+Bleed
+Incapacitating
+Armor-Piercing
+Anti-Personnel
+Pain
+Explosive
+Electrical
+Laser
+Dual-wielded
+Gas
+Haunted
+Evil
+Demonic
+Angelic
+Tribal
+Bloodthirsty
+Decorated
+Carefully Constructed
+Unusual
+Carvings
+Light
+Darkness
+Good
+War
+Blood
+Bone
+Glow
+Modified
+Death
+Life
+Rusted
+Angry
+Quiet
+Sharp
+Spikes
+Broken
+Corrupting
+Emotional
+Necromantic
+Sleep
+Music
+Rotting
+Automatic
+Blind
+Self-damaging
+Insanity
+Sanity
+Singing
+Liquid
+Flechettes
+Talkative
+Unreliable
+Schizophrenic
+Camouflage
+Scaled
+Quantum Mechanical
+Transformative
+Drunken
+Teeth
+Organic
+Vengeful
+Honorable
+Arcane
+Witchcraft
+Sacrifice
+Healing
+Cancer
+Acid
+Disease
+Poison
+Friend
+Hope
+Despair
+Aimed
+Terror
+Repeat
+Colonial
+Outdated
+Extradimensional
+Teleporting
+Painted
+River
+Ocean
+Lost
+Lava
+Smoke
+Stinging
+Sadistic
+Torturous
+Excitement
+Hallucination
+Dream
+Hunter
+Lightning
+Euphoria
+Peace
+Panic
+Jump
+Strength
+Agility
+Will
+Intelligence
+Diamond
+Jade
+Gold
+Silver
+Steel
+Vomit
+Ill
+Morality
+Loyalty
+Mountain
+Steal
+Stealth
+Burnt
+Mutation
+Rip
+Dragon
+Earthquake
+Rockslide
+Naked
+Murder
+Psychic
+Clairvoyance
+Entropy
+Birth
+Guard
+Painkiller
+Clown
+Joke
+Sever
+Flee
+Climbing
+Growth
+Running
+Stupidity
+Nail
+Bomb
+Armor
+Shield
+Resist
+Destruction
+Reconstruction
+Suicide
+Assault
+Defense
+Machinery
+Electronics
+Mechanics
+Love
+Hate
+Savior
+Cards
+Hair
+Cowardice
+Money
+Game
+Friendship
+Servant
+Bargain
+Drama
+Theater
+Female
+Male
+Shepherd
+Politics
+Reality warping
+Mind altering
+Memory
+Tunnel
+Underground
+Building
+Parents
+Wolf
+Deer
+Crow
+Pigeon
+Boar
+Heron
+Shark
+Lion
+Bear
+Paranoia
+Soldier
+Shadow
+Night
+Day
+Siren
+Horse
+Combination
+Rare
+Special
+Rich
+Domination
+Oppression
+Military
+Police
+Criminal
+Law
+Sociopath
+Psychosis
+Unfeeling
+Overgrown
+Canine
+Feline
+Educated
+Trained
+Child
+Lying
+Truth
+Infiltration
+Betrayal
+Addictive
+Protective
+Parental
+Choking
+Unfriendly
+Gregarious
+Grave
+Digger
+Tunnel
+Communist
+Capitalist
+Russia
+America
+China
+Africa
+Europe
+Nazi
+Imperialism
+Self-defense
+Entrapment
+Cage
+Robotic
+Low-Quality
+Surplus
+Old
+Wrathful
+Aggressive
+Passive
+Guilt
+Prisoner
+Punishment
+Japanese
+Torture
+Scared
+Launcher
+Magical
+Amnesia
+Lovecraftian
+Worship
+Refugee
+Improvised
+Repaired
+Stone
+Wood2
+Illegal
+Rip
+Reality
+Fabric
+Black Hole
+Disappear
+Escape
+Discovery
+Change
+Slug
+Heart
+Organ
+Harvest
+Crop
+Ugly
+Beautiful
+Unknown
+Viral
+Dance
+Tiny
+Shapeshifting
+Flashing
+Sexual
+Crusader
+Seductive
+Charming
+Lucky
+Reckless
+Space
+Unlucky
+Fairy
+Dinosaur
+Galactic
+Travel
+Revolutionary
+Secret
+Cataclysm
+Anomaly
+Containment
+Religious
+Popularity
+Impossible
+Artwork
+Eradication
+Vindictive
+Long lived
+Careful
+Concrete
+Meandering
+Pleasant
+Misinterpreted
+Incorporeal
+One Use
+Unstable
+Christmas
+Santa
+Celebratory
+Whale
+Post-Apocalyptic
+Sand
+God
+Scavenged
+Depression
+Mania
+Spy
+Pirate
+Ninja
+Samurai
+Zombie
+Fantasy
+Sci-fi
+Celtic
+
+[Ranged Weapon]
+Bow
+Slingshot
+Thrown
+Crossbow
+Pistol
+SMG
+Shotgun
+Machine Gun
+Rifle
+Explosives
+Launcher
+
+[Melee Weapon]
+Club
+Staff
+Short Sword
+Knife
+Warhammer
+Mace
+Spear
+Bastard Sword/Two-Handed Sword
+Axe
+# 1d4 for amount of effects. Roll for effects. 
+
+[Drugs]
+	[Ingestion Method]
+Injected
+Drunk
+Snorted
+Pill
+Eaten
+Eyedrops
+Smoked
+	[Addiction]
+Not addictive at all.
+Not very addictive. Need one every 20 turns.
+Somewhat addictive. Need one every 15 turns.
+Addictive. Need one every 10 turns.
+Very Addictive. Need one every 5 turns.
+	[Withdrawal In]
+Five Turns
+Ten Turns
+Twenty Turns
+Fourty Turns
+Eighty Turns
+	[Withdrawal Length]
+Lasts one turn.
+Lasts five turns.
+Lasts ten turns.
+Lasts fifteen turns.
+Lasts twenty turns.
+	[Effect Length]
+Lasts one turn.
+Lasts five turns.
+Lasts ten turns.
+Lasts fifteen turns.
+Lasts twenty turns.
+
+[Spells:1-4]
+	[Target]
+Outward: affects anything that is not you.
+Inward: affects yourself.
+	[School]
+Physical: changes things permanently. Making a duck into a cat or making a house from nothing would count as physical.
+Mental: creates a mental effect. Making people believe you don't exist or creating an illusion would count as mental.
+Temporary: creates something that lasts for a few minutes at most. Making a fireball or a rune would count as this.
+
+# Enemies
+# Captains are rugged enemies. In a videogame, they would be unique enemies. They get one effect.
+# Lieutenants are very tough enemies. In a videogame, they would be regular bosses. They get two effects.
+# Generals are extremely strong enemies. In a videogame, they would be final bosses. They get three effects.
+# Roll for effects. Amount of effects depends on rank of enemy.
+
+
+# Roll 1d4 for effects. Roll effects for themes that come up in the drama.
+[Fiction]
+	[Media]
+Book
+TV Show
+Animation
+Film
+Painting
+Sculpture
+Comic Book
+Theater
+Music
+	[Mood]
+Dangerous To Diabetics. Everything and everyone is good! Yay! YAAAY.
+Happy. Life's good, really. Optimism is the right path to take, and people are innately good.
+Realistic. There's good people, and bad people. Some get rewarded, others don't. The world's worth fighting for, but it's not the best.
+Sad. The good guys don't catch a break, and the bad people lap it all up.
+Don't Watch This If You Are Feeling Depressed. Reality is a prison and it's a crappy one at that. Everyone is not only evil, but incompetent and insane. Going mad or committing suicide is the only way out.
+	[Ending]
+Complete Happy Ending: Everyone goes away happy, even the villain is redeemed.
+Happy Ending: Those who deserved their punishment got it, and the heroes get rewarded.
+Bittersweet Ending: They completed their mission, but at what cost? Perhaps the villain got away. Maybe the person they wanted to save died. But at least the villains were stopped.
+Grim Ending: Nothing's improved, but at least the good guys got away.
+Sad Ending: the good guys are either dead or might as well be, but at least they did so while happy.
+Downer Ending: the villains won. The good guys are screwed/dead. What a waste.
+Kill Em All: everyone's dead. Everyone, villain and hero alike. Maybe one person walks away from all this if you're lucky.
+
+[Town]
+	[Size]
+Outpost
+Hamlet
+Village
+Town
+City
+	[Living conditions]
+Awful living conditions.
+Below average living conditions.
+Average living conditions.
+Above average living conditions.
+Excellent living conditions.
+# Gives all buildings a 1 in 2 chance of existing
+	[ALL(2):Buildings:2]
+Pub
+Weapon Dealer
+Radio Station
+Train Station (Goes to another, nearby town that automatically gets a train station)
+Hotel
+Local Faction Base (Whoever has the highest presence gets the base)
+Drug Dealer
+Artefact Dealer
+Leader's Office
+Power Substation
+General Store
+Vehicle Depot
+Farm
+Fishing
+Rich Guy's Mansion
+Arena
+Defenses
+Airstrip
+Bulletin Board
+Market
+		[Quality]
+Awful quality.
+Below average quality.
+Above average quality
+Excellent quality	
+	[Theme:1-4]
+Shanties
+Mountain
+River
+Seaside
+Boomtown
+Encampment
+Compound
+Colonial
+Outpost
+Walled town
+Large buildings
+Military
+Tribal
+Corporation
+Rich
+Segregated
+Maze-like
+Ancient
+Slum
+Crackdown
+
+[Allegiance]
+Enemies
+Unallied
+Minor Presence
+Major Presence
+Allies
+
+# Roll 1d100. That is the price of the object. Roll d8 for what to add.
+[Price]
++0
++5
++10
++20
++50
++100
++500
++1000
+
+[Faction]
+	[Respect]
+"Note: respect still counts if the faction is secret. It measures how known the faction is by it's peers, not/as well as the general populace."
+Important faction. Known all over the world.
+Major faction. Known all over the country.
+Average faction. Known in the general area.
+Minor faction. Known in the town/city they're based in.
+Unknown faction. Known only to those in it and those directly affected by it. 
+	[Size]
+Massive. Employs millions, with lots of delegation and subsidiaries.
+Large. Employs thousands, not including contractors.
+Average. Employs hundreds, maybe a thousand at most.
+Small. Employs in the double digits.
+Tiny. Employs around 30 people at most.
+	[Supplies]
+Unlimited. If it's wanted, it can be got. If it doesn't exist, it can be researched.
+Huge. Willing to spend millions if it accomplishes their goals, and able to take the cash drain.
+Average. Can spend thousands, but would prefer not to.
+Low. In the direst of situations, can spend a few hundred dollars.
+Non-existant. No cash at all: they do everything poor.
+Roll 1d4 for effects and roll for effects.
+
+[Vehicle]
+	[Type]
+Personal: Wingsuits, Bungee Cords, Parachutes, etc.
+Small Land Vehicle: Motorbikes, Quadbikes, Tricycles, etc.
+Large Land Vehicle: Cars, Trucks, Trains, etc.
+Small Sea Vehicle: Jetskis, Speedboats, Yachts, etc.
+Large Sea Vehicle: Oil Tankers, Destroyers, Cruise Liners, etc.
+Small Flying Vehicle: Helicopters, Cessnas, (small) Drones, etc.
+Large Flying Vehicle: Planes, Zeppelins, Spaceships, etc.
+	[Quality]
+Awful quality. This will probably break down half the time you use it, and be terrible the other half.
+Bad quality. This breaks down way more then usual for a vehicle of it's type but at least it isn't a total disaster.
+Average quality. This doesn't stand out much, but it isn't bad.
+Good quality. This is a pretty good design that works.
+Best quality. This is a fine vehicle and will probably last longer then you.
+Roll d4 for effects. Roll for effects.
+
+[Mission]
+	[Objective]
+Take
+Assassinate
+Invasion
+Defense
+Destroy
+Create
+Rescue     
+Spy
+Transport
+	[Pay]
+Pay: Roll 1d100. Add:
+Nothing.
+10 dollars.
+50 dollars.
+100 dollars.
+500 dollars.
+1,000 dollars.
+5,000 dollars.
+10,000 dollars.
+Roll 1d4 for effects. Roll effects.
+
+[Scavenging]
+"Use this for when running a post-apocalyptic/non-economic area game."
+Trash: Useless at the current time. May have been useful a long, long time ago, but it isn't anymore. Cannot be used for anything but crafting. Examples of this would be rubber bands,  individual nails, human teeth, or bullet casings.
+Junk: Broken pieces of crap. It's not great at it's job at all, but it's better then nothing. Can be used with a major penalty to any actions associated with it. Examples of this would be a rifle missing it's bolt-action, a car without an engine, or a rusted lock.
+Improvised: Not great, but not bad either. Doesn't provide any interesting things one way or another. Usually improvised items that are surprisingly good at their job. Can be used without any modifiers. Examples of this would be a high-quality zipgun, a paper clip serving as a lockpick, or a grenade made out of a tin-can and some fireworks.
+Quality: Primo! Good thing you found this. Usually these are pre-apocalypse pieces of equipment. Can be used with a bonus to use. Examples of this would be a pristine Dodge Challenger, a military-grade assault rifle, or a professional lockpick kit. 
