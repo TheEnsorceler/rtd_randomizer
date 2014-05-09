@@ -1,5 +1,6 @@
 import re
 import random
+import libtcodpy as libtcod
 
 
 INDENTSIZE = 4
@@ -10,6 +11,9 @@ flagarg_check = re.compile("([^\\(\\)]+)\\(([^\\)]*)\\)")
 note_check = re.compile("\"([^\"]*)\"$")
 remove_comment = re.compile("(?<!\\\\)#.*")
 category_list = []
+
+RESULT_W, RESULT_H = 35, 35
+result_display = libtcod.console_new(RESULT_W, RESULT_H)
 
 
 def is_num(string_in):
@@ -95,12 +99,20 @@ class Category:
         else:
             return retlist
 
-    def print_herp(self):
-        print(self.name + ':')
+    pc = [0, 0]
+
+    def print_rec(self, layer):
+        libtcod.console_set_color_control(libtcod.COLCTRL_2, libtcod.turquoise, libtcod.black)
+        libtcod.console_set_color_control(libtcod.COLCTRL_3, libtcod.gray, libtcod.black)
+        libtcod.console_print_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{:c}{}:{:c}".format(libtcod.COLCTRL_2, self.name, libtcod.COLCTRL_STOP))
+        libtcod.console_print(result_display, Category.pc[0], Category.pc[1], "{:c}{}{:c}".format(libtcod.COLCTRL_3, '|' * layer, libtcod.COLCTRL_STOP))
+        Category.pc[1] += libtcod.console_get_height_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{:c}{}:{:c}".format(libtcod.COLCTRL_2, self.name, libtcod.COLCTRL_STOP))
         for g in self.get():
-            print(g)
+            libtcod.console_print_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{}".format(g))
+            libtcod.console_print(result_display, Category.pc[0], Category.pc[1], "{:c}{}{:c}".format(libtcod.COLCTRL_3, '|' * layer, libtcod.COLCTRL_STOP))
+            Category.pc[1] += libtcod.console_print_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{}".format(g))
         for s in self.sub:
-            s.print_herp()
+            s.print_rec(layer + 1)
 
 
 def get_indent(line_in):
@@ -193,5 +205,60 @@ def scan_file(filename):
             linenum += 1
     return True
 
+select = 0
+list_cam = 0
+list_size = 30
 
-scan_file("test.txt")
+
+def do_input(event, key, mouse):
+    global select, list_cam
+    if event == libtcod.EVENT_KEY_PRESS:
+        if key.vk == libtcod.KEY_KP8 or key.vk == libtcod.KEY_UP:
+            select -= 1
+            if select < 0:
+                select += len(category_list)
+            list_cam = max(0, min(len(category_list) - list_size, int(select - list_size / 2)))
+        elif key.vk == libtcod.KEY_KP2 or key.vk == libtcod.KEY_DOWN:
+            select += 1
+            if select >= len(category_list):
+                select -= len(category_list)
+            list_cam = max(0, min(len(category_list) - list_size, int(select - list_size / 2)))
+        elif key.vk == libtcod.KEY_KP8 or key.vk == libtcod.KEY_ENTER:
+            libtcod.console_clear(result_display)
+            Category.pc = [0, 0]
+            category_list[select].print_rec(0)
+
+
+def do_update():
+    pass
+
+
+def do_render():
+    y = 1
+    for c in range(list_cam, min(list_size + list_cam, len(category_list))):
+        if c == select:
+            libtcod.console_set_color_control(libtcod.COLCTRL_1, libtcod.cyan, libtcod.blue)
+        else:
+            libtcod.console_set_color_control(libtcod.COLCTRL_1, libtcod.white, libtcod.black)
+        libtcod.console_print(0, 1, y, "{:c}{}{:c}".format(libtcod.COLCTRL_1, category_list[c].name, libtcod.COLCTRL_STOP))
+        y += 1
+    libtcod.console_blit(result_display, 0, 0, RESULT_W, RESULT_H, 0, 18, 1)
+
+
+libtcod.console_set_custom_font(b'terminal.png', libtcod.FONT_LAYOUT_ASCII_INROW)
+libtcod.console_init_root(50, 50, b'RTD Randomizer')
+libtcod.sys_set_fps(30)
+scan_file("gen.txt")
+
+key = libtcod.Key()
+mouse = libtcod.Mouse()
+while not libtcod.console_is_window_closed():
+    while True:
+        event = libtcod.sys_check_for_event(libtcod.EVENT_ANY, key, mouse)
+        if event == 0:
+            break
+        do_input(event, key, mouse)
+    do_update()
+    libtcod.console_clear(0)
+    do_render()
+    libtcod.console_flush()
