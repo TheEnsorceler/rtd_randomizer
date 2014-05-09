@@ -492,7 +492,8 @@ Defenses
 Airstrip
 Bulletin Board
 Market
-		[Quality]
+# The name of the category will not be displayed over the result
+		[Quality:HIDDEN]
 Awful quality
 Below average quality
 Above average quality

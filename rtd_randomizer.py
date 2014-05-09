@@ -12,7 +12,7 @@ note_check = re.compile("\"([^\"]*)\"$")
 remove_comment = re.compile("(?<!\\\\)#.*")
 category_list = []
 
-RESULT_W, RESULT_H = 35, 35
+RESULT_W, RESULT_H = 32, 48
 result_display = libtcod.console_new(RESULT_W, RESULT_H)
 
 
@@ -104,15 +104,21 @@ class Category:
     def print_rec(self, layer):
         libtcod.console_set_color_control(libtcod.COLCTRL_2, libtcod.turquoise, libtcod.black)
         libtcod.console_set_color_control(libtcod.COLCTRL_3, libtcod.gray, libtcod.black)
-        libtcod.console_print_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{:c}{}:{:c}".format(libtcod.COLCTRL_2, self.name, libtcod.COLCTRL_STOP))
-        libtcod.console_print(result_display, Category.pc[0], Category.pc[1], "{:c}{}{:c}".format(libtcod.COLCTRL_3, '|' * layer, libtcod.COLCTRL_STOP))
-        Category.pc[1] += libtcod.console_get_height_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{:c}{}:{:c}".format(libtcod.COLCTRL_2, self.name, libtcod.COLCTRL_STOP))
-        for g in self.get():
+        if not self.hidden:
+            libtcod.console_print_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{:c}{}:{:c}".format(libtcod.COLCTRL_2, self.name, libtcod.COLCTRL_STOP))
+            libtcod.console_print(result_display, Category.pc[0], Category.pc[1], "{:c}{}{:c}".format(libtcod.COLCTRL_3, '|' * layer, libtcod.COLCTRL_STOP))
+            Category.pc[1] += libtcod.console_get_height_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{:c}{}:{:c}".format(libtcod.COLCTRL_2, self.name, libtcod.COLCTRL_STOP))
+        glist = self.get()
+        for g in glist:
             libtcod.console_print_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{}".format(g))
             libtcod.console_print(result_display, Category.pc[0], Category.pc[1], "{:c}{}{:c}".format(libtcod.COLCTRL_3, '|' * layer, libtcod.COLCTRL_STOP))
             Category.pc[1] += libtcod.console_print_rect(result_display, Category.pc[0] + layer, Category.pc[1], 30 - Category.pc[0], 30, "{}".format(g))
-        for s in self.sub:
-            s.print_rec(layer + 1)
+            for s in self.sub:
+                s.print_rec(layer + 1)
+        if not len(glist):
+            for s in self.sub:
+                s.print_rec(layer + 1)
+
 
 
 def get_indent(line_in):
@@ -169,7 +175,9 @@ def scan_file(filename):
                 for arg in category_info:
                     flag = re.match(flagarg_check, arg)
                     if flag is None:
-                        if is_num(arg):
+                        if arg == "HIDDEN":
+                            add_this.hidden = True
+                        elif is_num(arg):
                             add_this.run_for = arg
                         else:
                             add_this.name = arg
@@ -198,8 +206,6 @@ def scan_file(filename):
                             add_this.number = True
                             if len(flagarg):
                                 add_this.initial_value = make_num(flagarg[0])
-                        elif flag.group(1) == "HIDDEN":
-                            add_this.hidden = True
                 current = add_this
                 current_indent = indent
             linenum += 1
@@ -240,7 +246,11 @@ def do_render():
             libtcod.console_set_color_control(libtcod.COLCTRL_1, libtcod.cyan, libtcod.blue)
         else:
             libtcod.console_set_color_control(libtcod.COLCTRL_1, libtcod.white, libtcod.black)
-        libtcod.console_print(0, 1, y, "{:c}{}{:c}".format(libtcod.COLCTRL_1, category_list[c].name, libtcod.COLCTRL_STOP))
+        if len(category_list[c].name) > 17:
+            s = category_list[c].name[:17]
+        else:
+            s = category_list[c].name
+        libtcod.console_print(0, 1, y, "{:c}{}{:c}".format(libtcod.COLCTRL_1, s, libtcod.COLCTRL_STOP))
         y += 1
     libtcod.console_blit(result_display, 0, 0, RESULT_W, RESULT_H, 0, 18, 1)
 
